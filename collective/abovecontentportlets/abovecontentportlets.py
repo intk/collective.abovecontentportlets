@@ -17,5 +17,22 @@ from plone.dexterity.browser.view import DefaultView
 from zope.interface import implementer
 
 from collective.abovecontentportlets import MessageFactory as _
+from datetime import date
 
+from zope.component import queryMultiAdapter
+from plone.app.layout.viewlets.common import ViewletBase
 
+class AboveContentPortletsViewlet(ViewletBase):
+    index = ViewPageTemplateFile('abovecontentportlets_templates/portlet.pt')
+
+    def update(self):
+        super(AboveContentPortletsViewlet, self).update()
+        self.year = date.today().year
+
+    def render_abovecontent_portlets(self):
+        portlet_manager = getMultiAdapter(
+            (self.context, self.request, self.__parent__),
+            name='collective.abovecontentportlets'
+        )
+        portlet_manager.update()
+        return portlet_manager.render()
