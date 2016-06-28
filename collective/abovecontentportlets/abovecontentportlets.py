@@ -22,6 +22,7 @@ from datetime import date
 from zope.component import queryMultiAdapter
 from plone.app.layout.viewlets.common import ViewletBase
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from zope.component import getMultiAdapter
 
 class AboveContentPortletsViewlet(ViewletBase):
     index = ViewPageTemplateFile('abovecontentportlets_templates/portlet.pt')
