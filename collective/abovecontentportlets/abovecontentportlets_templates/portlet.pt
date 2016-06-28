@@ -1,5 +1,5 @@
-<div class="row">
+<div class="row abovecontent-portlets">
 	<div class="col-xs-12">
-		<div tal:on-error="nothing" tal:replace="structure view/render_abovecontent_portlets" />
+		<div tal:on-error="nothing" tal:replace="structure provider:collective.abovecontentportlets" />
 	</div>
 </div>

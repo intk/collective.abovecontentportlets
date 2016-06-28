@@ -36,8 +36,8 @@
   <browser:viewlet
         name="collective.abovecontentportlets"
         for="*"
-        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
-        class=".abovecontentportlets.AboveContentPortlets"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+        class=".abovecontentportlets.AboveContentPortletsViewlet"
         permission="zope.Public"
         />
 
