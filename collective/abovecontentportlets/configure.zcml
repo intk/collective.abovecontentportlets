@@ -26,9 +26,9 @@
        in Plone -->
   <genericsetup:registerProfile
       name="default"
-      title="Above content portlets"
+      title="Above and below content portlets"
       directory="profiles/default"
-      description="Viewlet that adds a portlet manager above the content"
+      description="Viewlet that adds a portlet manager above and below the content"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
@@ -38,6 +38,14 @@
         for="*"
         manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
         class=".abovecontentportlets.AboveContentPortletsViewlet"
+        permission="zope.Public"
+        />
+
+  <browser:viewlet
+        name="collective.belowcontentportlets"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        class=".abovecontentportlets.BelowContentPortletsViewlet"
         permission="zope.Public"
         />
 

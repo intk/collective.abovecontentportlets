@@ -6,4 +6,9 @@
 	   type="collective.abovecontentportlets.interfaces.IAboveContentPortlets"
 	/>
 
+	<portletmanager
+	   name="collective.belowcontentportlets"
+	   type="collective.abovecontentportlets.interfaces.IBelowContentPortlets"
+	/>
+
 </portlets>

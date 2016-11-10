@@ -38,3 +38,20 @@ class AboveContentPortletsViewlet(ViewletBase):
         )
         portlet_manager.update()
         return portlet_manager.render()
+
+class BelowContentPortletsViewlet(ViewletBase):
+    index = ViewPageTemplateFile('abovecontentportlets_templates/portlet_below.pt')
+
+    def update(self):
+        super(BelowContentPortletsViewlet, self).update()
+        self.year = date.today().year
+
+    def render_belowcontent_portlets(self):
+        portlet_manager = getMultiAdapter(
+            (self.context, self.request, self.__parent__),
+            name='collective.belowcontentportlets'
+        )
+        portlet_manager.update()
+        return portlet_manager.render()
+
+

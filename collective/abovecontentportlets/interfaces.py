@@ -10,3 +10,8 @@ class IAboveContentPortlets(IColumn):
     Viewlet that adds this portlet manager above the content
     """
 
+class IBelowContentPortlets(IColumn):
+    """
+    Portlet manager 
+    Viewlet that adds this portlet manager above the content
+    """
